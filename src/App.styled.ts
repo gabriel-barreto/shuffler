@@ -1,10 +1,11 @@
-import { styled } from '@stitches/react'
+import { styled } from '@/theme'
 
 export const App = styled('main', {
   backgroundColor: '#333'
 })
 
 export const Message = styled('h1', {
-  color: '#fff',
-  fontSize: '18px'
+  color: '$blue500',
+  fontSize: '18px',
+  test: '24px'
 })
