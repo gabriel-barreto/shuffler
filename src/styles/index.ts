@@ -1,1 +1,1 @@
-export { glocalCss } from './global.style'
+export { globalStyle } from './global.style'
