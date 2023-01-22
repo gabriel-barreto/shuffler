@@ -1,10 +1,8 @@
 import * as S from './App.styled'
+import { globalStyle } from './styles'
 import { standardTheme } from './theme'
 
 export function App() {
-  return (
-    <S.App className={standardTheme}>
-      <S.Message>Hello world!</S.Message>
-    </S.App>
-  )
+  globalStyle()
+  return <S.App className={standardTheme} />
 }
