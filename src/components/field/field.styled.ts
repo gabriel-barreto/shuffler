@@ -8,3 +8,8 @@ export const Field = styled('div', {
   justifyContent: 'center',
   width: '100%'
 })
+
+export const Error = styled('p', {
+  color: '$indigo500',
+  fontSize: '$3'
+})
