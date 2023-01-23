@@ -20,7 +20,7 @@ function castTransformer(rawCast: string) {
 
 const validator = z
   .string()
-  .refine((value: string) => castTransformer(value).length > 0, {
+  .refine((value: string) => castTransformer(value).length > 11, {
     message: 'Você vai precisar encontrar mais craques!'
   })
   .transform(castTransformer)
