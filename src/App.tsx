@@ -7,10 +7,7 @@ export function App() {
   globalStyle()
   return (
     <S.App className={standardTheme}>
-      <Form
-        name="cast-shuffle"
-        field={{ name: 'cast', label: 'Qual vai ser o elenco?' }}
-      />
+      <Form onSubmit={console.log} />
     </S.App>
   )
 }
