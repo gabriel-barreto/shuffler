@@ -1,29 +1,13 @@
 import { Button } from '@/components/button'
 import { Field } from '@/components/field'
+import { castValidator } from '@/validators'
 import { ChangeEvent, FormEvent, useState } from 'react'
-import { z, ZodError } from 'zod'
+import { ZodError } from 'zod'
 import * as S from './form.styled'
 
 export interface FormProps {
   onSubmit: (cast: string[]) => void
 }
-
-function castTransformer(rawCast: string) {
-  const rawMembers = rawCast.split('\n')
-  return rawMembers
-    .map((rawMember: string) => {
-      if (!/^\d/.test(rawMember)) return ''
-      return rawMember.replace(/\d|\W/g, '')
-    })
-    .filter((e: string) => e)
-}
-
-const validator = z
-  .string()
-  .refine((value: string) => castTransformer(value).length > 11, {
-    message: 'Você vai precisar encontrar mais craques!'
-  })
-  .transform(castTransformer)
 
 export function Form({ onSubmit }: FormProps) {
   const [rawCast, setRawCast] = useState('')
@@ -32,7 +16,7 @@ export function Form({ onSubmit }: FormProps) {
   function onSubmitHandler(event: FormEvent) {
     event.preventDefault()
     try {
-      const members = validator.parse(rawCast)
+      const members = castValidator.parse(rawCast)
       onSubmit(members)
     } catch (ex) {
       const error = ex as ZodError
