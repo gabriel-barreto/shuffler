@@ -1,6 +1,7 @@
 import { styled } from '@/theme'
 
 export const App = styled('main', {
-  backgroundColor: '#333',
-  height: '100vh'
+  backgroundColor: '$gray900',
+  height: '100vh',
+  padding: '$2'
 })
