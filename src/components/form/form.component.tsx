@@ -11,7 +11,10 @@ export interface FormProps {
 function castTransformer(rawCast: string) {
   const rawMembers = rawCast.split('\n')
   return rawMembers
-    .map((rawMember: string) => rawMember.replace(/\d|\W/g, ''))
+    .map((rawMember: string) => {
+      if (!/^\d/.test(rawMember)) return ''
+      return rawMember.replace(/\d|\W/g, '')
+    })
     .filter((e: string) => e)
 }
 
