@@ -3,7 +3,7 @@ import { styled } from '@/theme'
 export const Input = styled('textarea', {
   alignItems: 'center',
   backgroundColor: '$gray700',
-  border: 'none',
+  border: '1px solid $gray500',
   borderRadius: '$md',
   color: '$gray100',
   display: 'flex',
@@ -18,5 +18,17 @@ export const Input = styled('textarea', {
   width: '100%',
   '&::placeholder': {
     color: '$gray300'
+  },
+  variants: {
+    error: {
+      true: {
+        backgroundColor: '$gray800',
+        borderColor: '$indigo500',
+        color: '$indigo500',
+        '&::placeholder': {
+          color: '$indigo400'
+        }
+      }
+    }
   }
 })

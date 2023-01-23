@@ -2,8 +2,14 @@ import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { Input } from './input.component'
 
-function setup({ fieldName = 'any-field-name' } = {}) {
-  return render(<Input fieldName={fieldName} />)
+function setup({
+  error = false,
+  fieldName = 'any-field-name',
+  onChange = vi.fn()
+} = {}) {
+  return render(
+    <Input error={error} fieldName={fieldName} onChange={onChange} />
+  )
 }
 
 describe('<Input />', () => {
@@ -26,5 +32,18 @@ describe('<Input />', () => {
     const inputEl = screen.getByRole('textbox')
     await userEvent.type(inputEl, 'Lorem\nIpsum\nDolor')
     expect(inputEl).toHaveAttribute('rows', '3')
+  })
+
+  it('calls onChange after type', async () => {
+    const onChange = vi.fn()
+    setup({ onChange })
+    const inputEl = screen.getByRole('textbox')
+    await userEvent.type(inputEl, 'a')
+    expect(onChange).toHaveBeenCalledTimes(1)
+    expect(onChange).toHaveBeenCalledWith(
+      expect.objectContaining({
+        target: expect.objectContaining({ value: 'a' })
+      })
+    )
   })
 })
