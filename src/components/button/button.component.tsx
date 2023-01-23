@@ -3,9 +3,18 @@ import * as S from './button.styled'
 
 export interface ButtonProps {
   label: string
-  onClick: MouseEventHandler
+  onClick?: MouseEventHandler
+  type?: 'button' | 'submit'
 }
 
-export function Button({ label, onClick }: ButtonProps) {
-  return <S.Button onClick={onClick}>{label}</S.Button>
+export function Button({
+  label,
+  onClick = () => {},
+  type = 'button'
+}: ButtonProps) {
+  return (
+    <S.Button onClick={onClick} type={type}>
+      {label}
+    </S.Button>
+  )
 }
