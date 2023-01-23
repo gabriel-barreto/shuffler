@@ -16,14 +16,16 @@ export default defineConfig({
   },
   test: {
     coverage: {
-      reporter: ['text', 'html', 'lcov'],
       exclude: [
         '.vitest/setup.ts',
+        '**/*.mock.*',
         '**/*.spec.*',
         '**/*.styled.*',
         '**/index.*',
         'node_modules/'
-      ]
+      ],
+      include: ['src/**/*.ts', 'src/**/*.tsx'],
+      reporter: ['text', 'html', 'lcov']
     },
     environment: 'jsdom',
     globals: true,
