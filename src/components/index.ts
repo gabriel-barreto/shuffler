@@ -1,5 +1,6 @@
 export { Button } from './button'
 export { Chunk } from './chunk'
+export { Chunks } from './chunks'
 export { Field } from './field'
 export { Form } from './form'
 export { Input } from './input'
