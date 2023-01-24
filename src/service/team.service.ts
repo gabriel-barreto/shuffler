@@ -1,7 +1,8 @@
-import { faker } from '@faker-js/faker/locale/pt_BR'
+import { faker } from '@faker-js/faker'
+import animals from './ptBR-animals.json'
 
 export function getName() {
-  return faker.animal.type()
+  return faker.helpers.arrayElement(animals)
 }
 
 export function getNames(count: number) {
