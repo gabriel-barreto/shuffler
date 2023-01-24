@@ -6,3 +6,8 @@ export const App = styled('main', {
   overflowY: 'scroll',
   padding: '$2'
 })
+
+export const Spacer = styled('span', {
+  display: 'block',
+  height: '16px'
+})

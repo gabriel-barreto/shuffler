@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react'
 import * as S from './App.styled'
-import { Chunk, Form } from './components'
+import { Chunks, Form } from './components'
 import { shuffle } from './service'
 import { globalStyle } from './styles'
 import { standardTheme } from './theme'
@@ -27,9 +27,8 @@ export function App() {
   return (
     <S.App className={standardTheme} ref={scrollableContainer}>
       <Form onSubmit={onSubmit} />
-      {chunks.map(members => (
-        <Chunk key={members[0]} members={members} />
-      ))}
+      <S.Spacer />
+      <Chunks chunks={chunks} />
     </S.App>
   )
 }
