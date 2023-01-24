@@ -16,4 +16,10 @@ describe('Cast Validator', () => {
     const members = castValidator.parse(raw)
     expect(members).toEqual(data)
   })
+
+  it('removes the empty slots from the array', () => {
+    const { raw } = makeCast({ length: 12 })
+    const members = castValidator.parse(`${raw}\n13 -`)
+    expect(members).toHaveLength(12)
+  })
 })
