@@ -1,14 +1,14 @@
 import * as S from './chunk.styled'
 
 export interface ChunkProps {
-  members: string[]
+  items: string[]
 }
 
-export function Chunk({ members }: ChunkProps) {
+export function Chunk({ items }: ChunkProps) {
   return (
     <S.Chunk>
       <S.Members>
-        {members.map((name, index) => (
+        {items.map((name, index) => (
           <S.Member key={name}>
             <S.MemberNumber>{index + 1}</S.MemberNumber>
             <S.MemberName>{name}</S.MemberName>

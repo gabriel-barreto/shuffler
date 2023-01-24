@@ -1,9 +1,11 @@
 import { styled } from '@/theme'
 
 export const Chunk = styled('article', {
-  backgroundColor: '$slate900',
+  backgroundColor: '$slate800',
+  border: '1px solid $slate700',
+  borderRadius: '$md',
+  boxShadow: '$card',
   color: '$gray100',
-  borderRadius: '$2',
   padding: '$2'
 })
 
