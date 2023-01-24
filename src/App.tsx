@@ -1,13 +1,14 @@
+import { Team } from '@/components/teams'
 import { useRef, useState } from 'react'
 import * as S from './App.styled'
-import { Chunks, Form } from './components'
-import { shuffle } from './service'
+import { Form, Teams } from './components'
+import { shuffleTeams } from './service'
 import { globalStyle } from './styles'
 import { standardTheme } from './theme'
 
 export function App() {
   const scrollableContainer = useRef<HTMLElement>(null)
-  const [chunks, setChunks] = useState<string[][]>([])
+  const [teams, setTeams] = useState<Team[]>([])
   globalStyle()
 
   function scrollDown() {
@@ -19,8 +20,8 @@ export function App() {
   }
 
   function onSubmit(cast: string[]) {
-    const chunks = shuffle(cast)
-    setChunks(chunks)
+    const teams = shuffleTeams(cast)
+    setTeams(teams)
     scrollDown()
   }
 
@@ -28,7 +29,7 @@ export function App() {
     <S.App className={standardTheme} ref={scrollableContainer}>
       <Form onSubmit={onSubmit} />
       <S.Spacer />
-      <Chunks chunks={chunks} />
+      <Teams teams={teams} />
     </S.App>
   )
 }
