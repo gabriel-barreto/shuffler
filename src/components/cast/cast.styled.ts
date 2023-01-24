@@ -1,13 +1,6 @@
 import { styled } from '@/theme'
 
-export const Chunk = styled('article', {
-  backgroundColor: '$slate800',
-  border: '1px solid $slate700',
-  borderRadius: '$md',
-  boxShadow: '$card',
-  color: '$gray100',
-  padding: '$2'
-})
+export const Cast = styled('article', { color: '$gray100' })
 
 export const Members = styled('ul', {
   display: 'flex',

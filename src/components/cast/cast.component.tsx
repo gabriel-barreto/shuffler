@@ -1,20 +1,20 @@
-import * as S from './chunk.styled'
+import * as S from './cast.styled'
 
-export interface ChunkProps {
-  items: string[]
+export interface CastProps {
+  members: string[]
 }
 
-export function Chunk({ items }: ChunkProps) {
+export function Cast({ members }: CastProps) {
   return (
-    <S.Chunk>
+    <S.Cast>
       <S.Members>
-        {items.map((name, index) => (
+        {members.map((name, index) => (
           <S.Member key={name}>
             <S.MemberNumber>{index + 1}</S.MemberNumber>
             <S.MemberName>{name}</S.MemberName>
           </S.Member>
         ))}
       </S.Members>
-    </S.Chunk>
+    </S.Cast>
   )
 }
