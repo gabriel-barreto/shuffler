@@ -5,6 +5,7 @@ export const Input = styled('textarea', {
   backgroundColor: '$gray700',
   border: '1px solid $gray500',
   borderRadius: '$md',
+  boxShadow: '$input',
   color: '$gray100',
   display: 'flex',
   fontSize: '$4',

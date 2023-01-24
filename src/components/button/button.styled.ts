@@ -5,6 +5,7 @@ export const Button = styled('button', {
   backgroundColor: '$indigo500',
   border: 'none',
   borderRadius: '$md',
+  boxShadow: '$button',
   color: '$gray100',
   display: 'flex',
   fontSize: '$2',
