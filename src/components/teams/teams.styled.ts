@@ -17,8 +17,16 @@ export const Team = styled('li', {
   padding: '$2'
 })
 
+export const Prefix = styled('span', {
+  color: '$gray400',
+  fontSize: '$2'
+})
+
 export const TeamName = styled('h3', {
+  alignItems: 'center',
   color: '$gray200',
+  display: 'flex',
   fontSize: '$3',
+  gap: '0.4rem',
   lineHeight: '$normal'
 })

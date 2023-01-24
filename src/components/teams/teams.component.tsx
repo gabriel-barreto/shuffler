@@ -14,7 +14,10 @@ export function Teams({ teams }: TeamsProps) {
     <S.Teams>
       {teams.map(({ cast, name }) => (
         <S.Team key={name}>
-          <S.TeamName>{name}</S.TeamName>
+          <S.TeamName>
+            <S.Prefix>Time</S.Prefix>
+            {name}
+          </S.TeamName>
           <Cast members={cast} />
         </S.Team>
       ))}
