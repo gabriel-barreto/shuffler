@@ -70,6 +70,13 @@ export const standardTheme = createTheme('standard', {
     md: '0.4rem',
     lg: '0.8rem'
   },
+  shadows: {
+    card: 'rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;',
+    button:
+      'rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;',
+    input:
+      'box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;'
+  },
   sizes: {
     hClickable: '48px'
   }
