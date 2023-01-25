@@ -17,6 +17,20 @@ function setup({ onSubmit = vi.fn() } = {}) {
 describe('<Form />', () => {
   const mockCastValidator = castValidator as unknown as { parse: Mock }
 
+  it('renders with the submit button disabled initially', () => {
+    setup()
+    const submitButtonEl = screen.getByRole('button')
+    expect(submitButtonEl).toBeDisabled()
+  })
+
+  it('enables the submit button after input something', async () => {
+    setup()
+    const castInputEl = screen.getByRole('textbox')
+    await userEvent.type(castInputEl, 'any thing')
+    const submitButtonEl = screen.getByRole('button')
+    expect(submitButtonEl).toBeEnabled()
+  })
+
   it('consumes the castValidator with the user input', async () => {
     const userInput = faker.lorem.words()
     setup()
@@ -48,6 +62,8 @@ describe('<Form />', () => {
     mockCastValidator.parse.mockReturnValue(parsedCast)
     const onSubmit = vi.fn()
     setup({ onSubmit })
+    const castInputEl = screen.getByRole('textbox')
+    await userEvent.type(castInputEl, 'AC')
     const submitButtonEl = screen.getByRole('button')
     await userEvent.click(submitButtonEl)
     expect(onSubmit).toHaveBeenCalledTimes(1)

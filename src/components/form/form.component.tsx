@@ -10,6 +10,7 @@ export interface FormProps {
 }
 
 export function Form({ onSubmit }: FormProps) {
+  const [isSubmitButtonDisabled, setSubmitButtonDisabled] = useState(true)
   const [rawCast, setRawCast] = useState('')
   const [error, setError] = useState('')
 
@@ -22,10 +23,13 @@ export function Form({ onSubmit }: FormProps) {
       const error = ex as ZodError
       const [{ message }] = error.issues
       setError(message)
+    } finally {
+      setSubmitButtonDisabled(true)
     }
   }
 
   function onChangeHandler({ target }: ChangeEvent<HTMLTextAreaElement>) {
+    setSubmitButtonDisabled(false)
     setError('')
     const { value } = target
     setRawCast(value)
@@ -39,7 +43,7 @@ export function Form({ onSubmit }: FormProps) {
         name="cast"
         onChange={onChangeHandler}
       />
-      <Button label="Sortear" type="submit" />
+      <Button disabled={isSubmitButtonDisabled} label="Sortear" type="submit" />
     </S.Form>
   )
 }
