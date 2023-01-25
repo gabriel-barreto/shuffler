@@ -3,7 +3,7 @@ import { styled } from '@/theme'
 export const Button = styled('button', {
   alignItems: 'center',
   backgroundColor: '$indigo500',
-  border: 'none',
+  border: '1px solid $indigo500',
   borderRadius: '$md',
   boxShadow: '$button',
   color: '$gray100',
@@ -14,5 +14,14 @@ export const Button = styled('button', {
   justifyContent: 'center',
   padding: '$2',
   textTransform: 'uppercase',
-  width: '100%'
+  transition: 'backgroundColor color borderColor boxShadow 400ms',
+  width: '100%',
+  willChange: 'contents',
+  '&:disabled': {
+    backgroundColor: '$indigo900',
+    border: '1px solid $indigo600',
+    boxShadow: 'none',
+    color: '$indigo500',
+    cursor: 'not-allowed'
+  }
 })
