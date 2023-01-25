@@ -31,7 +31,7 @@ describe('Team Service', () => {
       )
     })
 
-    it.only('returns a list of names with defined length', () => {
+    it('returns a list of names with defined length', () => {
       const length = 2
       const result = getNames(length)
       expect(result).toHaveLength(length)
