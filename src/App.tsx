@@ -27,9 +27,11 @@ export function App() {
 
   return (
     <S.App className={standardTheme} ref={scrollableContainer}>
-      <Form onSubmit={onSubmit} />
-      <S.Spacer />
-      <Teams teams={teams} />
+      <S.Wrapper>
+        <Form onSubmit={onSubmit} />
+        <S.Spacer />
+        <Teams teams={teams} />
+      </S.Wrapper>
     </S.App>
   )
 }
