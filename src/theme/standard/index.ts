@@ -35,7 +35,9 @@ export const standardTheme = createTheme('standard', {
   },
   space: {
     1: '0.8rem',
-    2: '1.6rem'
+    2: '1.6rem',
+    3: '2.4rem',
+    4: '3.2rem'
   },
   fontSizes: {
     1: '1rem',
@@ -78,6 +80,7 @@ export const standardTheme = createTheme('standard', {
       'box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;'
   },
   sizes: {
-    hClickable: '48px'
+    hClickable: '48px',
+    maxWidth: '60rem'
   }
 })
