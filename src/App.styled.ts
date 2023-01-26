@@ -11,13 +11,3 @@ export const App = styled('main', {
     padding: '$4'
   }
 })
-
-export const Wrapper = styled('div', {
-  maxWidth: '$maxWidth',
-  width: '100%'
-})
-
-export const Spacer = styled('span', {
-  display: 'block',
-  height: '16px'
-})
