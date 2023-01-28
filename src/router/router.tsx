@@ -1,19 +1,15 @@
-import { Outlet, ReactLocation, Router } from '@tanstack/react-location'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { routes } from './routes'
 
-const location = new ReactLocation()
-
 function mapPageToRoutes() {
-  return routes.map(({ path, component }) => ({
-    path,
-    element: component()
+  return routes.map(({ Component, path }) => ({
+    element: <Component />,
+    path
   }))
 }
 
+const router = createBrowserRouter(mapPageToRoutes())
+
 export function AppRouter() {
-  return (
-    <Router location={location} routes={mapPageToRoutes()}>
-      <Outlet />
-    </Router>
-  )
+  return <RouterProvider router={router} />
 }

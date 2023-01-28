@@ -6,6 +6,6 @@ export const paths = {
 }
 
 export const routes = [
-  { path: paths.cast, component: CastPage },
-  { path: paths.teams, component: TeamsPage }
+  { Component: CastPage, path: paths.cast },
+  { Component: TeamsPage, path: paths.teams }
 ]
