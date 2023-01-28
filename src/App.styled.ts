@@ -11,3 +11,8 @@ export const App = styled('main', {
     padding: '$4'
   }
 })
+
+export const Container = styled('div', {
+  maxWidth: '$maxWidth',
+  width: '100%'
+})

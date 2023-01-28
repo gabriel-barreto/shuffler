@@ -8,7 +8,9 @@ export function App() {
 
   return (
     <S.App className={standardTheme}>
-      <AppRouter />
+      <S.Container>
+        <AppRouter />
+      </S.Container>
     </S.App>
   )
 }
