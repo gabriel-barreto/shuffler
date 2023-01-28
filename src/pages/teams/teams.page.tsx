@@ -1,3 +1,8 @@
+import { Teams } from '@/components'
+import { useTeams } from '@/store'
+
 export function TeamsPage() {
-  return <p>Teams Page</p>
+  const { teams } = useTeams()
+
+  return <Teams teams={teams} />
 }
