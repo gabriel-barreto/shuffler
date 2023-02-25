@@ -1,36 +1,29 @@
-import { faker } from '@faker-js/faker'
-import $faker from 'faker'
-import { Mock } from 'vitest'
 import { getName, getNames } from './team.service'
-
-vi.mock('@faker-js/faker', () => ({
-  faker: { helpers: { arrayElement: vi.fn() } }
-}))
-
-const mockFaker = faker as unknown as { helpers: { arrayElement: Mock } }
 
 describe('Team Service', () => {
   describe('getName', () => {
-    it('invokes the API to get the data', () => {
-      getName()
-      expect(mockFaker.helpers.arrayElement).toHaveBeenCalledTimes(1)
+    it('names the idx 0 as "Colete"', () => {
+      const name = getName(0)
+      expect(name).toEqual('Colete')
     })
 
-    it('returns the result response', () => {
-      const animal = 'Cat'
-      mockFaker.helpers.arrayElement.mockReturnValue(animal)
-      const response = getName()
-      expect(response).toEqual(animal)
+    it('names the idx 1 as "Sem Colete"', () => {
+      const name = getName(1)
+      expect(name).toEqual('Sem Colete')
+    })
+
+    it('names the idx 2 as "Próximo"', () => {
+      const name = getName(2)
+      expect(name).toEqual('Próximo')
+    })
+
+    it('names all the next idxs as "[idx - 1]. Próximo"', () => {
+      const name = getName(7)
+      expect(name).toEqual('6. Próximo')
     })
   })
 
   describe('getNames', () => {
-    beforeAll(() => {
-      mockFaker.helpers.arrayElement.mockImplementation(() =>
-        $faker.lorem.word()
-      )
-    })
-
     it('returns a list of names with defined length', () => {
       const length = 2
       const result = getNames(length)
