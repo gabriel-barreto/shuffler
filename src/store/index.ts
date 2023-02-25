@@ -1,1 +1,1 @@
-export { useTeams } from './team.store'
+export { getTeams, useTeams } from './team.store'
