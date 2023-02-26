@@ -68,9 +68,10 @@ export const standardTheme = createTheme('standard', {
     loose: 2
   },
   radii: {
-    sm: '0.2rem',
+    full: '50%',
+    lg: '0.8rem',
     md: '0.4rem',
-    lg: '0.8rem'
+    sm: '0.2rem'
   },
   shadows: {
     card: 'rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;',
@@ -80,6 +81,7 @@ export const standardTheme = createTheme('standard', {
       'box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;'
   },
   sizes: {
+    fabIcon: '20px',
     hClickable: '48px',
     maxWidth: '60rem'
   }
