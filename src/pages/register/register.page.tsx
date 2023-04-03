@@ -57,7 +57,9 @@ export function RegisterPage() {
         onClick={onContinueHandler}
         type="button"
       />
-      {!hasSufficientPlayers && <p>Você precisa de pelo menos 12 craques!</p>}
+      {!hasSufficientPlayers && (
+        <S.ErrorMessage>Você precisa de pelo menos 12 craques!</S.ErrorMessage>
+      )}
     </>
   )
 }
