@@ -31,7 +31,9 @@ export const standardTheme = createTheme('standard', {
     slate600: '#475569',
     slate700: '#334155',
     slate800: '#1e293b',
-    slate900: '#0f172a'
+    slate900: '#0f172a',
+    green500: '#22c55e',
+    red500: '#ef4444'
   },
   space: {
     1: '0.8rem',
