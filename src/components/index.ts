@@ -1,5 +1,6 @@
 export { Button } from './button'
 export { Cast } from './cast'
+export { CleanFabButton } from './clean-fab-button'
 export { Field } from './field'
 export { Form } from './form'
 export { Input } from './input'
